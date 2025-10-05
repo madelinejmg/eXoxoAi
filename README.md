@@ -14,7 +14,7 @@ Although Kepler was designed as a statistical mission to investigate the frequen
 **eXoxoAi** is a vetting system that employs the Random Forest algorithm to improve the ease of exoplanet candidate classification as seen in the results of the model's confusion matrix trained on data retrieved from NASA’s Exoplanet Archive. It is a 3D web-based interface designed for early-career astrophysicists, researchers, and citizen scientists to explore open-source exoplanet datasets.
 
 # eXoxoAi background
-The website offers an interactive data visualization featuring the following types of exoplanets. Users can hover over each planet to view a pop-up displaying its corresponding density and mass.
+The website offers an interactive data visualization featuring the following types of exoplanets. Users can hover over each planet to view a pop-up displaying its properties.
 
 Exoplanets are planets that orbit other stars. Some resemble those in our own solar system, while others are dramatically different. The various types of exoplanets depend on both their size and their location within a stellar system.
 * **Gas Giants** are planets the size of Saturn or Jupiter, or much larger. They include "hot Jupiters", sorching planets in close orbits around their hosting stars.
