@@ -31,7 +31,7 @@ Exoplanets are planets that orbit other stars. Some resemble those in our own so
 * ```koi_fpflag_ec```: Ephemeris Match (indicates contamination) has a value of 1 when the candidate shares the same period and epoch as another object
 Attached below are the confirmed and false positive distributions for the features listed above used in our model
 <p align="center">
-  <img src="plot_features_histogram.png" width="300">
+  <img src="plot_features_histogram.png" width="500">
 </p>
 
 We implemented the random forest model using RandomForestClassifier from the scikit-learn library in Python, where the key predictor varibles from the KOI dataset. 
@@ -44,7 +44,7 @@ We extracted model performance measures including:
 - F1 Score: 0.977
 Which indicated that our model preformed very well at classifying our Objects of Interest. Attached below is our confusion matrix.
 <p align="center">
-  <img src="confusion_matrix.png" width="200">
+  <img src="confusion_matrix.png" width="500">
 </p>
 Finally, we predicted the classification of candidate Objects of Interest which were not confirmed in the KOI. Here we found more than 95% of these candidates would be classified as confirmed Objects of Interest. The updated dataset including the mass calculation, the exoplant type classification and classification of candidate objects of interest is included in the cumulativeKOIdata_with_mass_and_predictions csv file attached.
 
