@@ -11,7 +11,7 @@ The field of planet detection has been a rapidly growing area of research in ast
 
 Although Kepler was designed as a statistical mission to investigate the frequency of Earth-sized exoplanets in or near habitable zones, most early results focused on individual systems (Malik et al., 2021). However, the validation of candidates identified by the Kepler mission remains an ongoing effort, since eliminating false positives is a time-consuming and resource-intensive task that requires significant manpower and funding, and new candidates continue to be discovered. Researchers have developed an interest in using artificial intelligence and machine learning (AI/ML) algorithms to increase the accuracy of pattern detection and produce better results than manual parameter elimination and analysis, especially when dealing with more complex problems or data types.
 
-**eXoxoAi** is a vetting system that employs the Random Forest algorithm to improve the accuracy of candidate classification using a confusion matrix trained on data retrieved from NASA’s Exoplanet Archive. It is a 3D web-based interface designed for early-career astrophysicists, researchers, and citizen scientists to explore open-source exoplanet datasets.
+**eXoxoAi** is a vetting system that employs the Random Forest algorithm to improve the ease of exoplanet candidate classification as seen in the results of the model's confusion matrix trained on data retrieved from NASA’s Exoplanet Archive. It is a 3D web-based interface designed for early-career astrophysicists, researchers, and citizen scientists to explore open-source exoplanet datasets.
 
 # eXoxoAi background
 The website offers an interactive data visualization featuring the following types of exoplanets. Users can hover over each planet to view a pop-up displaying its corresponding density and mass.
@@ -29,9 +29,24 @@ Exoplanets are planets that orbit other stars. Some resemble those in our own so
 * ```koi_fpflag_ss```: Stellar Eclipse has a value of 1 when some phenomena caused by an eclipsing binary observed 
 * ```koi_fpflag_co```: Centroid Offset has a value of 1 when the source of the signal is from a nearby star
 * ```koi_fpflag_ec```: Ephemeris Match (indicates contamination) has a value of 1 when the candidate shares the same period and epoch as another object
+Attached below are the confirmed and false positive distributions for the features listed above used in our model
+<p align="center">
+  <img src="plot_features_histogram.png" width="300">
+</p>
 
-
-We implemented the random forest model using RandomForestClassifier from the scikit-learn library in Python, where the key predictor varibles from the KOI dataset.
+We implemented the random forest model using RandomForestClassifier from the scikit-learn library in Python, where the key predictor varibles from the KOI dataset. 
+We also calculated the mass and classified the Kepler Object's of Interest into the four exoplanet classifications using the mass and radius of our KOI entries and information on the mass and radius relationship of different exoplanets as described here: https://doi.org/10.1051/0004-6361/202348690
+We extracted model performance measures including:
+- Accuracy: 0.984
+- Precision: 0.969
+- Recall (Sensitivity): 0.984
+- Specificity: 0.984
+- F1 Score: 0.977
+Which indicated that our model preformed very well at classifying our Objects of Interest. Attached below is our confusion matrix.
+<p align="center">
+  <img src="confusion_matrix.png" width="200">
+</p>
+Finally, we predicted the classification of candidate Objects of Interest which were not confirmed in the KOI. Here we found more than 95% of these candidates would be classified as confirmed Objects of Interest. The updated dataset including the mass calculation, the exoplant type classification and classification of candidate objects of interest is included in the cumulativeKOIdata_with_mass_and_predictions csv file attached.
 
 # Dependencies
 * NASA Exoplanet Archieve
