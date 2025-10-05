@@ -2,7 +2,7 @@
 <p align="center">
   <img src="exoxoai.png" width="200">
 </p>
-<p align="center">A 3D exoplanet<a href="https://exoplanet-s180.bolt.host/"> visualizer!</a></p>
+<p align="center">A 3D exoplanet <a href="https://exoplanet-s180.bolt.host/">visualizer!</a></p>
 
 # Objective
 The field of planet detection has been a rapidly growing area of research in astrophysics over the past few decades and has driven the development of innovative methods to detect and characterize these planets. These bodies, known as exoplanets, are planets that orbit stars outside of our solar system. In recent years, over 6,000 exoplanets have been detected using different approaches, most notably the transit method. A transit occurs when one celestial object passes in front of another, such as a planet passing in front of a star. This phenomenon is characterized by periodic decreases in brightness caused by planetary eclipses of stars along the observer’s line of sight. However, an issue arises due to the high rate of false detections, which result from eclipsing binary systems, instrumental noise, or astrophysical variability that can mimic planetary transits (Malik et al., 2021).
