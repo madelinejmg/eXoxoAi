@@ -1,7 +1,7 @@
 export interface Exoplanet {
   id: string;
   name: string;
-  category: 'Gas Giant' | 'Ice Giant' | 'Rocky' | 'Super Earth';
+  category: 'Gas Giant' | 'Neptune-like' | 'Rocky' | 'Super-Earth';
   distance_ly: number;
   radius_earth: number;
   mass_earth: number;
@@ -13,6 +13,8 @@ export interface Exoplanet {
   y_position: number;
   z_position: number;
   created_at: string;
+  confirmed?: boolean;
+  predicted_existence?: int;
 }
 
 export interface FilterOptions {

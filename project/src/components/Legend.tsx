@@ -2,7 +2,7 @@ const CATEGORIES = [
   { name: 'Gas Giant', color: '#FFA500' },
   { name: 'Neptune-like', color: '#4FC3F7' },
   { name: 'Terrestrial', color: '#D32F2F' },
-  { name: 'Super Earth', color: '#7CB342' },
+  { name: 'Super-Earth', color: '#7CB342' },
 ];
 
 export function Legend() {

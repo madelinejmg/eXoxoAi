@@ -15,13 +15,13 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   const [filters, setFilters] = useState<FilterOptions>({
-    categories: ['Gas Giant', 'Ice Giant', 'Rocky', 'Super Earth'],
-    distanceRange: [0, 3000],
-    radiusRange: [0, 3],
-    massRange: [0, 3000],
-    temperatureRange: [0, 5000],
-    yearRange: [1990, 2024],
-  });
+  planetClasses: ['Gas Giant', 'Ice Giant', 'Rocky', 'Super Earth'],
+  radiusRange: [0, 20],           // adjust range for koi_prad (radius in Earth radii)
+  temperatureRange: [0, 4000],    // koi_teq (K)
+  periodRange: [0, 1000],         // koi_period (days)
+  showPredicted: null,            // show all by default
+});
+
 
   useEffect(() => {
     fetchExoplanets();
@@ -48,23 +48,30 @@ function App() {
   };
 
   const applyFilters = () => {
-    const filtered = exoplanets.filter(planet => {
-      return (
-        filters.categories.includes(planet.category) &&
-        planet.distance_ly >= filters.distanceRange[0] &&
-        planet.distance_ly <= filters.distanceRange[1] &&
-        planet.radius_earth >= filters.radiusRange[0] &&
-        planet.radius_earth <= filters.radiusRange[1] &&
-        planet.mass_earth >= filters.massRange[0] &&
-        planet.mass_earth <= filters.massRange[1] &&
-        planet.temperature_k >= filters.temperatureRange[0] &&
-        planet.temperature_k <= filters.temperatureRange[1] &&
-        planet.discovery_year >= filters.yearRange[0] &&
-        planet.discovery_year <= filters.yearRange[1]
-      );
-    });
-    setFilteredPlanets(filtered);
-  };
+  const filtered = exoplanets.filter(planet => {
+    const matchesClass = filters.planetClasses.includes(planet.planet_class ?? '');
+    const matchesRadius =
+      planet.koi_prad >= filters.radiusRange[0] &&
+      planet.koi_prad <= filters.radiusRange[1];
+    const matchesTemp =
+      planet.koi_teq >= filters.temperatureRange[0] &&
+      planet.koi_teq <= filters.temperatureRange[1];
+    const matchesPeriod =
+      planet.koi_period >= filters.periodRange[0] &&
+      planet.koi_period <= filters.periodRange[1];
+
+    let matchesPrediction = true;
+    if (filters.showPredicted === true)
+      matchesPrediction = planet.predicted_label === 'Predicted_Exist';
+    else if (filters.showPredicted === false)
+      matchesPrediction = planet.predicted_label === 'Predicted_Not_Exist';
+
+    return matchesClass && matchesRadius && matchesTemp && matchesPeriod && matchesPrediction;
+  });
+
+  setFilteredPlanets(filtered);
+};
+
 
   if (loading) {
     return (
@@ -86,7 +93,7 @@ function App() {
 
       <div className="fixed top-6 left-1/2 transform -translate-x-1/2 z-40">
         <h1 className="text-4xl font-bold text-white tracking-tight">
-          Exoplanet Explorer
+          eXoxoAi
         </h1>
       </div>
 
