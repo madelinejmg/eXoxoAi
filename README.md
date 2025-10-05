@@ -1,4 +1,4 @@
-<h1 align="center"> eXoxoAi 💕</h1>
+<h1 align="center"> eXoxoAi </h1>
 
 ## Objective
 
@@ -9,8 +9,6 @@
 
 
 ## Contributors
-Madeline Maldonado Gutierrez
-Emma McLaughlin
-Mimansa Kant
+Madeline Maldonado Gutierrez, Emma McLaughlin, Mimansa Kant
 
 ## References
