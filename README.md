@@ -18,8 +18,8 @@ The website offers an interactive data visualization featuring the following typ
 
 Exoplanets are planets that orbit other stars. Some resemble those in our own solar system, while others are dramatically different. The various types of exoplanets depend on both their size and their location within a stellar system.
 * **Gas Giants** are planets the size of Saturn or Jupiter, or much larger. They include "hot Jupiters", sorching planets in close orbits around their hosting stars.
-* **Ice Giants** are similar in size to the Neptune and Uranus in our own solar system, with hydrogen or helium-dominated atmospheres.
-* **Rocky (terrestrial)** are Earth-sized or smaller planets composed of rock and metal. Some may have oceans, atmospheres, or other signs of potential habitability.
+* **Ice Giants (Neptune-like** are similar in size to the Neptune and Uranus in our own solar system, with hydrogen or helium-dominated atmospheres.
+* **Terrestrial (rocky)** are Earth-sized or smaller planets composed of rock and metal. Some may have oceans, atmospheres, or other signs of potential habitability.
 * **Super-Earth** are typically terrestrial (rocky) planets more massive than Earth but lighter than Neptune. They may or may not possess atmospheres.
 
 **eXoxoAi**'s RandomForest algorithm depends on the following KOI parameters (Jin et al. 2022):
